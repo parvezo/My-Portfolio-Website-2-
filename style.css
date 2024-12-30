@@ -10,6 +10,24 @@
     list-style: none;
 }
 
+:root{
+    --bg-color: #191f36;
+    --snd-bf-color:#262848;
+    --text-color:#fff;
+    --main-color: #59B2F4;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.section {
+    min-width: 100vh;
+    padding: 10 rem 9% 2rem;
+
+}
+
 .header{
     position: fixed;
     top: 1rem;
@@ -20,7 +38,6 @@
     justify-content: center;
     gap: 5rem;
     background-color:rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur (8px);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 3rem;
@@ -37,7 +54,6 @@
     
 .logo:hover{
     transform: scale(1.1);
-
 }
 
 .nav-links{
@@ -48,13 +64,13 @@
     font-weight: 300;
 }
 
-li a{
+li a {
     position: relative;
     color: white;
     font-weight: 300;
 }
 
-li a::before{
+li a::before {
     position: absolute;
     content: '';
     width: 0;
@@ -87,6 +103,7 @@ li a:hover::before{
     background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
     transform: scale(1.03);
 }
+
 #menu-icon{
     font-size: 2rem;
     display: none;
@@ -105,12 +122,14 @@ li a:hover::before{
     justify-content: center;
     gap: 10rem;
 }
-.about img{
+
+.about img {
     width: 30vw;
     border-radius: 3rem;
     border: 10px solid white;
 }
-.info-box{
+
+.info-box {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -118,6 +137,7 @@ li a:hover::before{
     justify-content: center;
     gap: 1.5rem;  
 }
+
 .info-box h3{
     font-size: 1.8rem;
     font-weight: 500;
@@ -136,39 +156,68 @@ li a:hover::before{
     font-size: 1.5rem;
 }
     
-.btn-group{
+.btn-group {
     display: flex;
     gap: 1rem;
 }
 
-.btn{
+.d-btn {
+    background-color: rgb(37, 184, 247);
     border-radius: 3rem;
     padding: 0.5rem 1.5rem;
-    border: 2px solid black;
+    color: white;
     cursor: pointer;
     font-weight: 500;
     text-wrap: nowrap;
     transition: 0.2s ease-in-out;
 }
 
-.btn:hover{
-background-color: black;
-color: white;
-}
-
-.social{
-    display: flex;
-    gap: 2rem;
-}
-
-.social i{
-    font-size: 2.5rem; 
+.c-btn{
+    background-color: rgb(37, 184, 247);
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
+    font-weight: 500;
+    color: white;
+    text-wrap: nowrap;
     transition: 0.2s ease-in-out;
 }
 
-.social:hover{
-    transform: scale(1.1);
+.me-c{
+    color: white;
+    gap: 1.5rem;
+}
+
+.d-btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.c-btn:hover{
+    background-color: black;   
+}
+
+/* social icon  */
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 2rem;
+    cursor: pointer;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    transition: .5s ease-in-out;
+}
+
+/* social icon hover */
+.social a:hover{
+    background: var(--main-color);
+    color: var(--snd-bg-color);
 }
 
 .experience{
@@ -196,15 +245,17 @@ color: white;
     border-radius: 3rem;
 }
 
-/* section-2 css */
+
+/* experience section */
 .grid{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 2rem;
-}
 
+}
 .grid-card{
-    border: 2px solid black;
+    border: 2px solid white;
+    background: var(--snd-bg-color);
     border-radius: 3rem;
     padding: 3rem;
     display: flex;
@@ -216,8 +267,9 @@ color: white;
 }
     
 .grid-card:hover{
+    border-color: var(--main-color);
     transform: scale(1.02);
-    background-color: black;
+    background: var(--snd-bg-color);
     color: white;
 }
 
@@ -247,7 +299,11 @@ background-color: rgb(219, 219, 219);
     background: linear-gradient(to bottom, #009dff, #ff00ff);
 }
 
-/* section card-4 css */
+/* projects section card-4 css */
+.section-title{
+    padding: 50px;
+}
+
 .projects-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -267,14 +323,16 @@ background-color: rgb(219, 219, 219);
     justify-content: center;
     text-align: center;
     gap: 1.5rem;
-    border: 2px solid black;
+    border: 2px solid white;
+    background: var(--snd-bg-color);
     border-radius: 3rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
 .project-card:hover{
-    background-color:black;
+    border-color: var(--main-color);
+    background: var(--snd-bg-color);
     color: white;
     transform: translateY(-10px) scale(1.02); 
 }
@@ -285,7 +343,7 @@ background-color: rgb(219, 219, 219);
 }
 
 .project-card:hover .btn{
-    border: 2px solid white;
+    border: 2px solid black;
     color: white;
 }
 
@@ -295,46 +353,52 @@ background-color: rgb(219, 219, 219);
     color: black;
 
 }
+
 .project-card h3{
     font-size: 2rem;
     font-weight: 500;
 }
 
-/* footer section -css */
 
-.input-box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* contact section */
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
     text-align: center;
-    gap: 2rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-.input-box input{
-    border-radius: 3rem;
-    border: 2px solid black;
-    padding: 2rem 8rem;
-    font-size: 3rem;
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.input-box input::placeholder{
-    font-size: 3rem;
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: var(--snd-bg-color);
+    color: white;
+    border-radius: .8rem;
+    margin: .7rem 0;
 }
 
-.input{
-    position: relative;
+.contact form .input-box input {
+    width: 49%;
 }
 
-.input i{
-    position: absolute;
-    font-size: 4rem;
-    top: 50%;
-    left: 10px;
-    transform: translate(50%, -50%);
+.contact form textarea{
+    resize: none;
 }
 
+.contact form .c-btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* footer section  */
 footer{
     bottom: 0;
     left: 0;
@@ -354,7 +418,7 @@ footer ul{
 }
 
 footer ul li a{
-    color: black;
+    color: white;
     font-weight: 600;
 }
 
@@ -363,6 +427,163 @@ footer ul li a{
     margin-top: 2rem;
 }
 
+
+
+/* responsive css */
+@media(max-width:1280px){
+    header{
+    padding: 1rem 2rem;
+    gap: 2rem;
+}
+
+.about .about-container{
+    gap: 3rem;
+}
+
+
+.experience{
+    flex-direction: column;
+}
+
+.experience-info{
+    flex-direction: column;
+}
+
+.input-box input{
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+}
+
+.input input::placeholder{
+    font-size: 2.5rem;
+}
+
+.input-box a{
+    font-size: 2.5rem;
+}
+}
+  
+
+/* 768px er jonno  */
+@media(max-width:768px){
+    header{
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+
+    header .logo{
+        font-size: 1rem;
+    }
+    
+    header .visit-btn{
+        display: none;   
+    }
+
+    .about-container{
+        flex-direction: column;
+    }
+
+    .input-box input{
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .input-box input::placeholder{
+        font-size: 1.5rem;     
+    }
+
+    .input-box a{
+        display: none;  
+    }
+    
+    .grid{
+        margin-left: 30px;
+        margin-right: 30px;
+        grid-template-columns: repeat(1,1fr);
+    } 
+
+    .projects-grid{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+    .contact{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+
+    .experience-info img{
+    width: 70vw;
+    }
+
+ 
+}
+     
+
+    
+    
+@media(max-width: 600px){
+    header #menu-icon{
+        display: block;
+    }
+
+.nav-links {
+    position: absolute;
+    top: 100%;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 3rem;
+    display: none;
+}
+
+.nav-links li{
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+.nav-links.active{
+    display: block;   
+}
+header{
+    padding: 1rem 5rem;
+    gap: 8rem;
+}
+
+header .logo{
+    font-size: 1.5rem;    
+}
+
+
+.about-container img{
+    width: 80vw;   
+}
+    
+.input-box input{
+    padding: 0, 5rem 3rem;
+    width: 80%;
+    font-size: 1.5rem;
+  
+}
+
+.input-box input::placeholder{
+    font-size: 1.5rem;   
+}
+
+footer ul{
+    gap: 1rem;
+}
+} 
+
+    
+    
+    
 
 
 
