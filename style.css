@@ -465,6 +465,7 @@ footer ul li a{
   
 
 /* 768px er jonno  */
+
 @media(max-width:768px){
     header{
         gap: 1rem;
@@ -492,7 +493,7 @@ footer ul li a{
         font-size: 1.5rem;     
     }
 
-    .input-box a{
+    .input-box i{
         display: none;  
     }
     
@@ -514,7 +515,7 @@ footer ul li a{
 
 
     .experience-info img{
-    width: 70vw;
+        width: 70vw;
     }
 
  
@@ -566,7 +567,7 @@ header .logo{
 }
     
 .input-box input{
-    padding: 0, 5rem 3rem;
+    padding: 0.5rem 3rem;
     width: 80%;
     font-size: 1.5rem;
   
